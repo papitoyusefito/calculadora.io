@@ -1,5 +1,5 @@
 
-    <!DOCTYPE html>
+     <!DOCTYPE html>
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8">
@@ -20,12 +20,12 @@
           .calculadora{
             display:inline-block;
             background-color:transparent;
-            border:solid 1px;
+            /* border:solid 1px; */
             padding:20px;
             position: absolute;
             transform:translate(-50%, -50%);
             top:50%;
-            box-shadow:20px 20px 1000px 1px grey;
+            box-shadow:10px 10px 100px 1px black;
           }
           .boton{
             padding:10px;
@@ -51,15 +51,17 @@
 
           }
           .boton:hover, .boton2:hover{
-            border:solid 1px white ;
+            box-shadow:inset 0px 0px 10px 1px black;
+
           }
           .texto{
 
             margin-bottom:10px;
             height:90px;
             width:250px;
+            border: none;
             background:transparent;
-            border:solid 1px white;
+            /* border:solid 1px white; */
             color:rgba(255, 255, 255, 1);
             text-shadow:0px 0px 10px 1px black;
             font-size:20px;
@@ -71,13 +73,15 @@
             background:transparent;
             display:;
           }
-          .select option{
+          #select option{
             background:transparent;
-            display:;
+            border: solid 1px;
+            position: absolute;
+            bottom: 10%;
           }
         </style>
       </head>
-      <body>
+      <body id="body">
         <h1>Calculadora</h1>
         <div class="calculadora">
           <form >
@@ -121,13 +125,14 @@
         </footer>
         <div class="selector">
           <select id="select" name="" >
-            <option value="">Cambiar tema</option>
+            <option value="">Default</option>
             <option value="tema1">Tema 1</option>
             <option value="tema2">Tema 2</option>
             <option value="tema3">Tema 3</option>
             <option value="tema4">Tema 4</option>
-
           </select>
+          <br>
+          <input type="button" class="aplicar"onclick="tema()"value="Aplicar">
         </div>
         <script>
           var box = document.getElementById("text")
@@ -153,6 +158,27 @@
             x = eval(x*x);
             box.value = x;
           }
+          var selected = document.getElementById("select");
+          function tema(){
+              var body = document.getElementById("body")
+              if(selected.value == "tema1"){
+              document.getElementById("body").style.background=" linear-gradient(to right, #00bf8f, #001510)"
+            }
+            else if (selected.value == "tema2") {
+              document.getElementById("body").style.background="linear-gradient(to right, #feac5e, #c779d0, #4bc0c8)"
+            }
+            else if (selected.value == "tema3") {
+              document.getElementById("body").style.background="linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)"
+            }
+            else if (selected.value == "tema4") {
+              document.getElementById("body").style.background="linear-gradient(to right, #7b4397, #dc2430)"
+            }
+
+
+
+
+          }
+
         </script>
       </body>
 </html>
