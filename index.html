@@ -88,9 +88,9 @@
             <input type="text" class="texto" id="text" value="" disabled>
             <br>
             <input type="button" class="boton"  value="C" onclick="addnumero('c')">
-            <input type="button" class="boton" value="M" onclick="addnumero(x)">
+            <input type="button" class="boton" value="M">
             <input type="button" class="boton" value="Dec">
-            <input type="button" class="boton" value="Del" onclick="delete()">
+            <input type="button" class="boton" value="Del">
             <br>
             <input type="button" class="boton" value="&#8730" onclick="raiz()">
             <input type="button" class="boton" value="Mod">
@@ -158,12 +158,7 @@
             x = eval(x*x);
             box.value = x;
           }
-             function delete(){
-             x = box.value;
-             long = box.value.lenght;
-             newNum= x.substring(long, long-1)
-             
-             }
+           
           var selected = document.getElementById("select");
           function tema(){
               var body = document.getElementById("body")
